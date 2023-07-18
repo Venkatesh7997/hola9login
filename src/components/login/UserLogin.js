@@ -377,7 +377,7 @@ const UserLogin = () => {
                             </a>
                           </div>
                         </div>
-                        <a href='/UserDashboard'>
+                        <a href='/Dashboard'>
                         <button
                           className="button"
                           type="button"
