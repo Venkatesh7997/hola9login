@@ -1,6 +1,6 @@
 import React from 'react'
 
-import "./UserLogin.css"
+import "./UserLogin.css";
 const UserLogin = () => {
   return (
     <>
