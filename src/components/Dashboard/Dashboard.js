@@ -6,6 +6,13 @@ import 'react-datepicker/dist/react-datepicker.css';
 const Dashboard = () => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(null);
+
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];   
+    setSelectedFile(file);
+  };
 
   return (
     <div>
@@ -46,29 +53,32 @@ const Dashboard = () => {
             />
             <label>Select a date range:</label>
             <div>
-              <span>From: </span>
-              <DatePicker
+              <span>From :{" "}</span>
+              <DatePicker 
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
                 selectsStart
                 startDate={startDate}
                 endDate={endDate}
-                dateFormat="yyyy-MM-dd"
+                dateFormat="dd-MM-yyyy"
                 required
-                className=''
+                className='date'
+                
               />
             </div>
             <div>
-              <span>To: </span>
-              <DatePicker
+              <span style={{paddingRight:"20px"}}>To : {" "}</span>
+              <DatePicker 
                 selected={endDate}
                 onChange={(date) => setEndDate(date)}
                 selectsEnd
                 startDate={startDate}
                 endDate={endDate}
                 minDate={startDate}
-                dateFormat="yyyy-MM-dd"
+                dateFormat="dd-MM-yyyy"
                 required
+                className='date'
+                
               />
             </div>
 
@@ -126,6 +136,12 @@ const Dashboard = () => {
               />{" "}
               100%
             </label>
+            <label>File Upload</label>
+            <input type="file" onChange={handleFileChange} />
+            <button  type="submit" id="submit"
+            className="submit1" disabled={!selectedFile}>
+              Upload your file
+            </button>
 
             <label htmlFor="comments">Any comments or suggestions?</label>
             <textarea
@@ -146,7 +162,7 @@ const Dashboard = () => {
           <footer>
             <p>
               Created by{" "}
-              <a href="https://twitter.com/SandipanIO">Sandipan Mukherjee</a>
+              <a href="">Akhil Goud</a>
             </p>
           </footer>
         </div>
