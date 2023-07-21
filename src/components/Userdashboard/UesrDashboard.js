@@ -1,10 +1,10 @@
-import React , { useState }from 'react'
-import "./ProjectDetails.css"
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { Link } from 'react-router-dom';
+import "./UesrDashboard.css"
 
-const ProjectDetails = () => {
+const UesrDashboard = () => {
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
     const [selectedFile, setSelectedFile] = useState(null);
@@ -13,7 +13,7 @@ const ProjectDetails = () => {
     const handleFileChange = (event) => {
       const file = event.target.files[0];   
       setSelectedFile(file);
-    };
+    }
   return (
     <div>
       <main>
@@ -174,4 +174,4 @@ const ProjectDetails = () => {
   )
 }
 
-export default ProjectDetails
+export default UesrDashboard
