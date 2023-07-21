@@ -144,10 +144,7 @@ const Dashboard = () => {
             />
           </form>
           <footer>
-            <p>
-              Created by{" "}
-              <a href="https://twitter.com/SandipanIO">Sandipan Mukherjee</a>
-            </p>
+            
           </footer>
         </div>
       </main>

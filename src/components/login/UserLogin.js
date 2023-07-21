@@ -1,10 +1,12 @@
 import React from 'react'
-
-import "./UserLogin.css";
+import "./UserLogin.css"
+import { Link } from 'react-router-dom'
 const UserLogin = () => {
   return (
     <>
-    <div >
+    <div style={{
+        backgroundColor:"ghostwhite"
+    }}>
       <header
         className="light__Header-lj69nl-0 fWgQqk headerfixed"
         style={{ paddingTop: 8, paddingBottom: 8 }}
@@ -176,7 +178,7 @@ const UserLogin = () => {
                         src="https://media.licdn.com/dms/image/C4D0BAQGCaEawctgXaw/company-logo_200_200/0/1656670188043?e=2147483647&v=beta&t=FeBFKhQfCn37uX1_w-Mx-Kydko3ExjBa-GQ4GvYSFuk"
                         className="img-fluid"
                         alt="Sample image"
-                        style={{ borderRadius: "50%",height:"70%",width:"70%" }}
+                        style={{ borderRadius: "50%",height:"30%",width:"30%" }}
                       />
                     </div>
                     <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
@@ -377,7 +379,7 @@ const UserLogin = () => {
                             </a>
                           </div>
                         </div>
-                        <a href='/Dashboard'>
+                        <Link to="/Dashboard">
                         <button
                           className="button"
                           type="button"
@@ -395,7 +397,9 @@ const UserLogin = () => {
                         >
                           Login
                         </button>
-                        </a>
+                        </Link>
+
+                        
                       </form>
                      
                     </div>
