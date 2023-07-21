@@ -2,6 +2,7 @@ import React , { useState }from 'react'
 import './Dashboard.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   const [startDate, setStartDate] = useState(null);
@@ -152,7 +153,8 @@ const Dashboard = () => {
               placeholder="Enter your suggestions here"
               defaultValue={""}
             />
-            <input
+           <Link></Link>
+            <input 
               type="submit"
               id="submit"
               className="submit"

@@ -484,7 +484,7 @@ const AdminDashboard = () => {
         type="mail"
         name="email"
         id="name"
-        className="name"
+        className="name2"
         placeholder="Enter your Out look"
         required=""
       />
