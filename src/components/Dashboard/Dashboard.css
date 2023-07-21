@@ -96,13 +96,20 @@ input[type="checkbox"] {
 }
 
 .name,
-.email,
-.date{
-   min-height: 2rem;
+.email{
+   
    padding: 1rem 0;
-   border: none;
-   border-bottom: 1px solid #bcb9b9;
+   border: 2px;
+   border: 1px solid #bcb9b9;
 }
+.date{
+   
+   padding: 1rem ;
+   border: 2px;
+   border: 1px solid #bcb9b9;
+}
+
+
 
 .dropdown {
    min-height: 2rem;
@@ -150,6 +157,24 @@ textarea {
 }
 
 .submit:hover {
+   background-color: transparent;
+   color: #222;
+}
+.submit1{
+   font-size: 1.7rem;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   color: #f4f4f4;
+   background-color: #008080;
+   border: 3px solid #008080;
+   border-radius: 1rem;
+   width: 23rem;
+   padding: 1rem 2rem;
+   cursor: pointer;
+   transition: all .3s;
+}
+.submit1:hover {
    background-color: transparent;
    color: #222;
 }
