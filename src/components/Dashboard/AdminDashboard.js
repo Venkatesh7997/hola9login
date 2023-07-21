@@ -1,6 +1,10 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import "./AdminDashboard.css"
+import DatePicker from 'react-datepicker';
 const AdminDashboard = () => {
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(null);
   return (
  
     <>
@@ -473,6 +477,50 @@ const AdminDashboard = () => {
             </div>
           </div>
         </div>
+        <label htmlFor="name" id="name-label">
+        Outlook<span className="required">*</span>
+      </label>
+      <input
+        type="mail"
+        name="email"
+        id="name"
+        className="name"
+        placeholder="Enter your Out look"
+        required=""
+      />
+
+      <label style={{paddingTop:"20px"}}>Select a date range:</label>
+      <div>
+        <span>From :{" "}</span>
+        <DatePicker 
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+          selectsStart
+          startDate={startDate}
+          endDate={endDate}
+          dateFormat="dd-MM-yyyy"
+          required
+          className='date'
+          
+        />
+      </div>
+      <div>
+        <span style={{paddingRight:"20px"}}>To : {" "}</span>
+        <DatePicker 
+          selected={endDate}
+          onChange={(date) => setEndDate(date)}
+          selectsEnd
+          startDate={startDate}
+          endDate={endDate}
+          minDate={startDate}
+          dateFormat="dd-MM-yyyy"
+          required
+          className='date'
+          
+        />
+      </div>
+
+
         
         <div id="add_project" className="modal custom-modal fade" role="dialog">
           <div
