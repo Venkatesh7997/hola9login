@@ -520,7 +520,7 @@ const AdminDashboard = () => {
         />
       </div>
 
-      <button className="button2" type="submit">Login</button>
+      <button className="button2" type="submit">Get Detailes</button>
         
         <div id="add_project" className="modal custom-modal fade" role="dialog">
           <div
