@@ -6,12 +6,23 @@ const Login = () => {
   // State to store email and password values
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
 
   // Function to handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Here, you can implement the login logic using the email and password values
-    // For this example, we will just log them in the console
+
+    // Validate email with your company domain
+    const companyDomain = "outlook.com";
+    const emailRegex = new RegExp(`^[A-Za-z0-9._%+-]+@${companyDomain}$`, "i");
+
+    if (!emailRegex.test(email)) {
+      setEmailError("Invalid email format or not from your company");
+      return;
+    }
+
+    // If validation passes, you can implement the login logic here
+    // For this example, we will just log the email and password in the console
     console.log("Email:", email);
     console.log("Password:", password);
   };
@@ -21,7 +32,7 @@ const Login = () => {
       <form onSubmit={handleSubmit} className="login-form">
         <h2>Login</h2>
         <div className="form-group">
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">Outlook:</label>
           <input
             type="email"
             placeholder="Outlook"
@@ -30,6 +41,7 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+          {emailError && <div className="error">{emailError}</div>}
         </div>
         <div className="form-group">
           <label htmlFor="password">Password:</label>
@@ -41,9 +53,12 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-        </div> 
+        </div>
         <Link to="/ProjectDetails">
-        <button className="button1" type="submit">Login</button></Link>
+          <button className="button1" type="submit">
+            Login
+          </button>
+        </Link>
       </form>
     </div>
   );
